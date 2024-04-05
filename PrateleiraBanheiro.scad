@@ -65,19 +65,20 @@ module roundedcube(size = [1, 1, 1], center = false, radius = 0.5, apply_to = "a
 
 // size will be 21cm
 radius_bar = (25.5/2);
+decrease_size  = 6.02;
 difference(){
     translate([0,-(83.5/2),radius_bar-05]){ // wall to middle of bar: 8.35 cm
-    roundedcube([210, 90-6.02, (radius_bar + 05)], center = true);
+    roundedcube([210, 90-decrease_size, (radius_bar + 05)], center = true);
     };
     rotate([0, 90, 0]){ 
     cylinder(h = 220, r = radius_bar, center = true); // 2.5464791 cm radius of the bar
     };
 };
 
-translate([0, 0.75, (radius_bar + 05)]){
+translate([0, 0.75-(decrease_size/2), (radius_bar + 05)]){
 roundedcube([210, 5,  5], true);  
 };
 
-translate([0, -(83.5+0.75), (radius_bar + 05)]){
+translate([0, -(83.5+0.75)+(decrease_size/2), (radius_bar + 05)]){
 roundedcube([210, 5,  15], true);  
 };
