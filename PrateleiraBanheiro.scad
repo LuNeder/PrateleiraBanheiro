@@ -66,7 +66,7 @@ module roundedcube(size = [1, 1, 1], center = false, radius = 0.5, apply_to = "a
 // size will be 21cm
 radius_bar = (25.5/2);
 decrease_size  = 4.77;
-extra_size = 6.77;
+extra_size = 6.77; // the zero is 0.75
 difference(){
     union(){
     translate([0,-(83.5/2)+(decrease_size/2),radius_bar-05]){ // wall to middle of bar: 8.35 cm
