@@ -66,16 +66,15 @@ module roundedcube(size = [1, 1, 1], center = false, radius = 0.5, apply_to = "a
 // size will be 21cm
 radius_bar = (25.5/2);
 decrease_size  = 4.77;
-extra_size = 4.77;
+extra_size = 6.77;
 difference(){
     union(){
     translate([0,-(83.5/2)+(decrease_size/2),radius_bar-05]){ // wall to middle of bar: 8.35 cm
     roundedcube([210, 90-decrease_size, (radius_bar + 05)], center = true);
     };
     
-    
-    translate([0, 0.635+(extra_size/2), radius_bar-05+7.375]){
-    roundedcube([210, 10, 3], center = true);
+    translate([0, 2.3+(extra_size/2), radius_bar-05+7.375]){
+    roundedcube([210, extra_size+0.4, 3], center = true);
     };
     };
     
@@ -84,7 +83,7 @@ difference(){
     };
 };
 
-translate([0, 0.75+extra_size, (radius_bar + 05)]){
+translate([0, extra_size, (radius_bar + 05)]){
 roundedcube([210, 5,  5], true);  
 };
 
