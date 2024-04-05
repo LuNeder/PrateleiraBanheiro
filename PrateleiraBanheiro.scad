@@ -67,7 +67,7 @@ module roundedcube(size = [1, 1, 1], center = false, radius = 0.5, apply_to = "a
 radius_bar = (25.5/2);
 difference(){
     translate([0,-(83.5/2),radius_bar-05]){ // wall to middle of bar: 8.35 cm
-    roundedcube([210, 90, (radius_bar + 05)], center = true);
+    roundedcube([210, 90-6.02, (radius_bar + 05)], center = true);
     };
     rotate([0, 90, 0]){ 
     cylinder(h = 220, r = radius_bar, center = true); // 2.5464791 cm radius of the bar
